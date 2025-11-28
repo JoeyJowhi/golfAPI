@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -22,6 +24,11 @@ public class Tournament {
     private BigDecimal entryFee, cashPrizeAmount;
 
     @ManyToMany
+    @JoinTable(
+            name = "tournament_members",
+            joinColumns = @JoinColumn(name = "tournament_id"),
+            inverseJoinColumns = @JoinColumn(name = "member_id")
+    )
     private List<Member> participatingMembers;
 
 

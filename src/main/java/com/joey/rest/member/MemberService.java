@@ -1,5 +1,10 @@
 package com.joey.rest.member;
 
-public class MemberService {
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MemberService {
+    @Autowired private MemberRepository memberRepository;
 }
