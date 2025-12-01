@@ -17,6 +17,8 @@ import java.util.List;
 public class TournamentController {
     @Autowired private TournamentService tournamentService;
     @Autowired private MemberService memberService;
+    @Autowired
+    private TournamentRepository tournamentRepository;
 
 
     @GetMapping("/tournaments")
@@ -30,8 +32,8 @@ public class TournamentController {
     }
 
     @GetMapping("/tournaments/search/start")
-    public List<Tournament> getTournamentsByStartDate(@RequestParam LocalDate startDate) {
-        return tournamentService.getTournamentsByStartDate(startDate);
+    public List<Tournament> getTournamentsByStartDate(@RequestParam LocalDate date) {
+        return tournamentService.getTournamentsByStartDate(date);
     }
 
     @GetMapping("/tournaments/search/location")
@@ -68,6 +70,7 @@ public class TournamentController {
         }
 
         tournament.getParticipatingMembers().add(member);
+        tournamentRepository.save(tournament);
 
         return tournament.getParticipatingMembers();
     }

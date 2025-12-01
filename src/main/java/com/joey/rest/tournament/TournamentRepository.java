@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface TournamentRepository extends CrudRepository<Tournament, Long> {
-    public List<Tournament> findByStartDate(LocalDate startDate);
+    public List<Tournament> findAllByStartDate(LocalDate startDate);
 
-    public List<Tournament> findByLocation(String location);
+    public List<Tournament> findAllByLocation(String location);
 }

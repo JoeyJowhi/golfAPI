@@ -24,11 +24,11 @@ public class TournamentService {
     }
 
     public List<Tournament> getTournamentsByStartDate(LocalDate startDate) {
-        return tournamentRepository.findByStartDate(startDate);
+        return tournamentRepository.findAllByStartDate(startDate);
     }
 
     public List<Tournament> getTournamentsByLocation(String location) {
-        return tournamentRepository.findByLocation(location);
+        return tournamentRepository.findAllByLocation(location);
     }
 
 
