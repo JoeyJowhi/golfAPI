@@ -63,3 +63,34 @@ All screenshots displayed below are of functionality asked for the in the QAP in
 
 <h4>Search Tournaments by Start Date</h4>
 ![Search Tournaments by Start Date](images/searchTournamentsByStartDate.png)
+
+<br>
+
+<h3>Deployment Steps and Docker Support</h3>
+
+<h4>AWS RDS Database</h4>
+![AWS RDS Database](images/AWSRDSDatabase.png)
+
+<br>
+
+<h4>Security Group for RDS</h4>
+![Security Group for RDS](images/AWSRDSVPCSecurityGroup.png)
+
+<br>
+
+<h4>MySQL Workbench Connected to RDS</h4>
+![MySQL Workbench Connected RDS](images/MySQLWorkbenchConnectedToRDSEndpoint.png)
+
+<br>
+
+<h4>Docker Image GitHub Action</h4>
+![Docker Image GitHub Action](images/DockerImageGitHubAction.png)
+
+<br>
+
+<h4>GolfAPI Container Running</h4>
+![GolfAPI Container Running](images/golfAPIContainerRunning.png)
+
+To run the container use the command "docker compose up". Although since the database SG won't allow traffic not from my IP address, so that would need to be setup manually.
+
+Speaking of the database; getting the RDS database created was a little trial and error. There were some configuration options I was not able to use due to the restrictions of the AWS Learners Lab. Once I figured that out though, all that was left was setting up the SG to allow inbound and outbound MySQL traffic from my IP.
